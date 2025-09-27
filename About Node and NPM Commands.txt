@@ -1,0 +1,14 @@
+NPM Commands
+First 
+npm init 
+then 
+npm i 
+for express json webtoken dotenv
+npm install express jsonwebtoken dotenv
+for nodemon
+npm install -g nodemon
+
+
+NODE Documentation Link
+introduction to Node Js
+{https://nodejs.org/en/learn/getting-started/introduction-to-nodejs}
