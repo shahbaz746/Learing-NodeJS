@@ -1,31 +1,15 @@
 const express = require('express')
 const app = express()
-const port = 
+const port = 3000
 
-app.use(express.static('public'))
-
-
-app.get('/', (req, res) => {
-  res.send('Hello World!2122   ')
-})
-
-app.get('/about', (req, res) => {
-  res.send('About Me')
-})
-
-app.get('/contact', (req, res) => {
-  res.send('Contact Us')
-})
-
-app.get('/blog', (req, res) => {
-  res.send('Hello blog!')
-})
-
-app.get('/blog/:sulg/:secend', (req, res) => {
-    console.log(req.params)
-    console.log(req.query)
-  res.send(`hello ${req.params.sulg} and ${req.params.secend}`)
-})
+app.use((req, res, next) => {
+  console.log('Request in first midelware',req.url,req.method)
+  next();
+});
+app.use((req, res, next) => {
+  console.log('Request in sec midelware',req.url,req.method)
+  res.send('Well come to Hello World!')
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
