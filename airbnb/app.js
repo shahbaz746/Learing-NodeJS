@@ -5,10 +5,15 @@ const path = require('path')
 const express = require('express')
 // Local modules
 const userRouter = require('./routes/userRouter')
-const hostRouter = require('./routes/hostRouter')
+const {hostRouter} = require('./routes/hostRouter')
 const rootDir = require('./Utiles/pathUtil')
 const app = express()
+
+app.set('view engine', 'ejs');
+app.set('views','views');
+
 const port = 3000
+app.use(express.static(path.join(rootDir,'public')));
 
 app.use((req, res, next) => {
   console.log(req.method, req.url)
