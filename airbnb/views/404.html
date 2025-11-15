@@ -1,13 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 | Airbnb</title>
+
+  <style>
+    /* General page setup */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #fde2e4, #ffffff, #dbeafe);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* Header */
+    header {
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      border-radius: 20px;
+      padding: 40px 60px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #ec4899;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #4b5563;
+      margin-bottom: 25px;
+    }
+
+    a {
+      display: inline-block;
+      background-color: #ec4899;
+      color: white;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 9999px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    a:hover {
+      background-color: #db2777;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    }
+  </style>
 </head>
 <body>
-    <Header>
-        <h1>404 Not Found</h1>
-    </Header>
+
+  <header>
+    <h1>404 Not Found</h1>
+    <p>Oops! The page you’re looking for doesn’t exist.</p>
+    <a href="/">🏠 Go Back Home</a>
+  </header>
+
 </body>
 </html>
