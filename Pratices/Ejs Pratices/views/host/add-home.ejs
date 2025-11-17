@@ -1,0 +1,99 @@
+<%- include('../partials/header') %>
+
+  <style>
+    /* General layout */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #fde2e4, #ffffff, #dbeafe);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Header */
+    header {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 25px 0;
+      margin-bottom: 50px;
+    }
+
+    header h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ec4899;
+      letter-spacing: -0.5px;
+    }
+
+    /* Form Container */
+    main {
+      background-color: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(6px);
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 40px 30px;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    input[type="text"] {
+      padding: 14px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    input[type="text"]:focus {
+      border-color: #ec4899;
+      box-shadow: 0 0 6px rgba(236, 72, 153, 0.3);
+    }
+
+    button {
+      background-color: #ec4899;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 9999px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #db2777;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Add a New Home</h1>
+  </header>
+
+  <main>
+    <form action="/host/add-home" method="POST">
+      <input type="text" name="houseName" placeholder="Enter the name of your house" required>
+      <button type="submit">Add Home</button>
+    </form>
+  </main>
+
+</body>
+</html>

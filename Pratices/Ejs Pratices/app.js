@@ -4,8 +4,8 @@ const path = require('path')
 // external moudules
 const express = require('express')
 // Local modules
-const userRouter = require('./routes/userRouter')
-const {hostRouter} = require('./routes/hostRouter')
+const storeRouter = require('./routes/storeRouter')
+const hostRouter = require('./routes/hostRouter')
 const rootDir = require('./Utiles/pathUtil')
 const errorsController = require("./controllers/errors");
 const app = express()
@@ -15,7 +15,7 @@ const app = express()
 app.set('view engine', 'ejs');
 app.set('views','views');
 
-const port = 3000
+const port = 3001
 app.use(express.static(path.join(rootDir,'public')));
 
 app.use((req, res, next) => {
@@ -23,7 +23,7 @@ app.use((req, res, next) => {
   next()
 })
 app.use(express.urlencoded())
-app.use(userRouter);
+app.use(storeRouter);
 app.use(hostRouter);
 
 app.use(errorsController.pageNotFound);

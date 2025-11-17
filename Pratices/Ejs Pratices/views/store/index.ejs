@@ -1,0 +1,156 @@
+
+  <%- include('../partials/header') %>
+  <style>
+    /* General styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #fde2e4, #ffffff, #dbeafe);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Header */
+    header {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 25px 0;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ec4899; /* pink */
+      letter-spacing: -0.5px;
+    }
+
+    header h1 span {
+      color: #2563eb; /* blue */
+    }
+
+    /* Section container */
+    section {
+      background-color: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(6px);
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      width: 90%;
+      max-width: 600px;
+    }
+
+    section h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #333;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    /* List of homes */
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      background-color: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 15px 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    li:hover {
+      border-color: #ec4899;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    li span:first-child {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #374151;
+    }
+
+    li span:last-child {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #ec4899;
+    }
+
+    /* No homes message */
+    p {
+      text-align: center;
+      color: #6b7280;
+      font-style: italic;
+    }
+
+    /* Footer button */
+    footer {
+      margin-top: 40px;
+    }
+
+    footer a {
+      display: inline-block;
+      background-color: #ec4899;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 9999px;
+      font-weight: 500;
+      text-decoration: none;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
+    }
+
+    footer a:hover {
+      background-color: #db2777;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Welcome to <span>Airbnb</span></h1>
+  </header>
+
+  <!-- Homes Section -->
+  <section>
+    <h2>Registered Homes</h2>
+    
+    <% if (registeredHomes.length > 0) { %>
+      <ul>
+        <% registeredHomes.forEach(home => { %>
+          <li>
+            <span><%= home.houseName %></span>
+            <span>View →</span>
+          </li>
+          <button>Book</button>
+        <% }) %>
+      </ul>
+    <% } else { %>
+      <p>No homes registered yet.</p>
+    <% } %>
+  </section>
+
+  <!-- Footer link -->
+  <footer>
+    <a href="/host/add-home">➕ Add a New Home</a>
+  </footer>
+
+</body>
+</html>
