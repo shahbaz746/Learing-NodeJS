@@ -12,6 +12,7 @@ storeRouter.get("/favourites", storeController.getFavouriteList);
 
 storeRouter.get("/homes/:homeID", storeController.getHomeDetails);
 storeRouter.post("/favourites", storeController.postAddToFavourite);
+storeRouter.post("/favourites/delete/:homeId", storeController.postRemoveFormFavourite);
 
 
 

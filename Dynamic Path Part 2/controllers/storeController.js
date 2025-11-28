@@ -54,6 +54,19 @@ exports.postAddToFavourite = (req, res, next) => {
   })
 }
 
+exports.postRemoveFormFavourite = (req, res, next) => {
+  const homeId = req.params.homeId;
+  Favourite.deleteById(homeId, error =>{
+    if(error){
+      console.log("Error removing from favourit",error)
+    }
+     res.redirect("/favourites")
+  })
+
+}
+
+
+
 exports.getHomeDetails = (req, res, next) => {
   const homeID = req.params.homeID;
   console.log("At home details pages", homeID);
